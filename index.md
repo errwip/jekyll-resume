@@ -4,4 +4,4 @@ title: Hello World
 ---
 
 # 🎉 Hello Jekyll!
-This is my super quick Jekyll site on GitHub Pages (still private).
+This is my super quick Jekyll site on GitHub Pages.
