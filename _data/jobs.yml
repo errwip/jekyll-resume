@@ -1,0 +1,15 @@
+- company: SpaceY
+  position: Senior Software Engineer
+  years: 2022–2025
+  achievements:
+    - Built reusable UI components
+    - Led frontend architecture revamp
+    - Mentored junior developers
+
+- company: RoboCorp
+  position: Frontend Developer
+  years: 2019–2022
+  achievements:
+    - Developed internal dashboard system
+    - Improved page performance by 35%
+    - Designed component library
