@@ -1,1 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background: #f9f9f9;
+}
 
+.resume {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px;
+  background: white;
+  border: 1px solid #ddd;
+}
+
+h1, h2, h3 {
+  margin-bottom: 5px;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+.pdf-button {
+  background: #333;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.pdf-button:hover {
+  background: #111;
+}
+
+/* -------------------------
+   PRINT / PDF STYLING
+-------------------------- */
+@media print {
+  body {
+    background: white;
+    margin: 0;
+  }
+
+  .resume {
+    border: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .pdf-button {
+    display: none; /* hide download button in PDF */
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+  }
+}
