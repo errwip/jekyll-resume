@@ -11,16 +11,7 @@
 
   <!-- Header -->
   <header>
-    <h1>{{ site.data.info.name }}</h1>
-    <h2>{{ site.data.info.role }}</h2>
-
-    <p>
-      {{ site.data.info.email }} ·
-      {{ site.data.info.location }} ·
-      <a href="{{ site.data.info.website }}">{{ site.data.info.website }}</a>
-    </p>
-
-    <button class="pdf-button" onclick="window.print()">Download PDF</button>
+    {% include resume_header.html %}
   </header>
 
   <hr/>
@@ -78,7 +69,7 @@
   </section>
 
   <hr/>
-
+  <button class="pdf-button" onclick="window.print()">Download PDF</button>
   <!-- Page content (if you ever add some) -->
   {{ content }}
 
