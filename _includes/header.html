@@ -1,8 +1,11 @@
-<h2><b>{{ site.data.info.name }}</b> {{ site.data.info.role }}</h2>
-
-<p>
-  {{ site.data.info.email }} ·
-  {{ site.data.info.location }} ·
-  <a href="{{ site.data.info.website }}">{{ site.data.info.website }}</a>
-</p>
-
+<ul style="display: flex; list-style: none; gap: 10px; padding: 0; margin: 0;">
+  <li>
+    <h2>{{ site.data.info.name }}</h2>
+    <!-- <h2>{{ site.data.info.role }}</h2> -->
+  </li>
+  <li>
+    {{ site.data.info.email }} ·
+    {{ site.data.info.location }} ·
+    <a href="{{ site.data.info.website }}">{{ site.data.info.website }}</a>
+  </li>
+</ul>
