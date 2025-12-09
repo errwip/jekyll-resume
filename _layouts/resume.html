@@ -1,40 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>{{ site.title }}</title>
+  <meta charset="UTF-8">
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-<header></header>
-<main>
-    <!-- resume.md content -->
-    <section>
-        {{ content }}
-    </section>
 
-    <section>
-        <h1>{{ site.data.info.name }}</h1>
-        <h2>{{ site.data.info.role }}</h2>
-    </section>
-    <section>
-        <div>
-            <h3>Work Experience</h3>
-        </div>
-        <div>
-            {% for job in site.data.jobs %}
-                <div style="margin-bottom: 20px;"> 
-                    <h4>{{ job.position }} — <strong>{{ job.company }}</strong></h4>
-                    <p><em>{{ job.years }}</em></p>
-                    <ul>
-                        {% for item in job.achievements %}
-                            <li>{{ item }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% endfor %}
-        </div>
-    </section>
-</main>
-<footer></footer>
+<div class="resume">
+
+  <!-- Header -->
+  <header>
+    <h1>{{ site.data.info.name }}</h1>
+    <h2>{{ site.data.info.role }}</h2>
+
+    <p>
+      {{ site.data.info.email }} ·
+      {{ site.data.info.location }} ·
+      <a href="{{ site.data.info.website }}">{{ site.data.info.website }}</a>
+    </p>
+
+    <button class="pdf-button" onclick="window.print()">Download PDF</button>
+  </header>
+
+  <hr/>
+
+  <!-- Skills -->
+  <section>
+    <h3>Skills</h3>
+    <strong>Technical:</strong>
+    <ul>
+      {% for skill in site.data.skills.technical %}
+      <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+
+    <strong>Tools:</strong>
+    <ul>
+      {% for tool in site.data.skills.tools %}
+      <li>{{ tool }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <hr/>
+
+  <!-- Work Experience -->
+  <section>
+    <h3>Work Experience</h3>
+
+    {% for job in site.data.jobs %}
+      <div class="job">
+        <h4>{{ job.position }} — <strong>{{ job.company }}</strong></h4>
+        <em>{{ job.years }}</em>
+
+        <ul>
+          {% for a in job.achievements %}
+            <li>{{ a }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </section>
+
+  <hr/>
+
+  <!-- Education -->
+  <section>
+    <h3>Education</h3>
+
+    {% for edu in site.data.education %}
+      <p>
+        <strong>{{ edu.degree }}</strong><br>
+        {{ edu.school }} ({{ edu.years }})
+      </p>
+    {% endfor %}
+  </section>
+
+  <hr/>
+
+  <!-- Page content (if you ever add some) -->
+  {{ content }}
+
+</div>
+
 </body>
 </html>
