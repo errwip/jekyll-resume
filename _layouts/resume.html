@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ site.title }}</title>
+</head>
+<body>
+
+<h1>{{ site.data.info.name }}</h1>
+<h2>{{ site.data.info.role }}</h2>
+
+<h3>Work Experience</h3>
+
+{% for job in site.data.jobs %}
+  <section style="margin-bottom: 20px;">
+    <h4>{{ job.position }} — <strong>{{ job.company }}</strong></h4>
+    <p><em>{{ job.years }}</em></p>
+
+    <ul>
+    {% for item in job.achievements %}
+      <li>{{ item }}</li>
+    {% endfor %}
+    </ul>
+  </section>
+{% endfor %}
+
+<!-- Page content -->
+{{ content }}
+
+</body>
+</html>
